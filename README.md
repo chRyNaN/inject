@@ -1,0 +1,2 @@
+# Inject
+A simple Kotlin multi-platform abstraction around the javax.inject annotations. This allows using the annotations in Kotlin common code so that platform specific annotation processors can register them.
