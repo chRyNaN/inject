@@ -47,7 +47,7 @@ class MyUseCase @Inject constructor() { ... }
 * `@Named("name")`
 * `@Qualifier`
 * `@Scope`
-* `@Singletone`
+* `@Singleton`
 * `Provider<T>`
 
 ## [License]("https://github.com/chRyNaN/inject/blob/master/LICENSE")
