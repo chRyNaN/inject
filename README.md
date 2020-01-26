@@ -1,10 +1,12 @@
 # Inject
 A simple Kotlin multi-platform abstraction around the [javax.inject](https://search.maven.org/artifact/javax.inject/javax.inject/1/jar) annotations. This allows using the annotations in Kotlin common code so that platform specific annotation processors can register them.
 
-For more information about the library, refer to the blog post [here](https://chrynan.codes/kotlin-inject/) which was featured in Android Weekly issue #396.
+For more information about the library, refer to the blog post [here](https://chrynan.codes/kotlin-inject/) which was featured in Android Weekly issue [#396](https://androidweekly.net/issues/issue-396).
 <a href="https://androidweekly.net/issues/issue-396" title="Android Weekly Issue 396">
 <img alt="Badge" src="https://androidweekly.net/issues/issue-396/badge" height="20px"></img>
 </a>
+
+The [blog post](https://chrynan.codes/kotlin-inject/) was also featured in Kotlin Weekly issue [#182](https://mailchi.mp/kotlinweekly/kotlin-weekly-182).
 
 # Building the library
 The library is provided through [Github Packages](https://github.com/chRyNaN/inject/packages). Checkout the [releases](https://github.com/chRyNaN/inject/releases) package to get the latest version.
