@@ -5,7 +5,7 @@ ext {
     libraryGroup = 'com.chrynan'
     libraryOwner = 'chrynan'
     libraryRepo = 'inject'
-    libraryVersion = '0.2.0'
+    libraryVersion = '0.3.0'
     libraryVersionCode = 1
     libraryVersionDescription = 'Minor Release'
     libraryGithubUrl = 'https://github.com/chRyNaN/inject.git'
