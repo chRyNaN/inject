@@ -1,6 +1,9 @@
 name: Publish
 
-on: [release]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -19,4 +22,6 @@ jobs:
       - name: Gradle Publish
         env:
           KEY: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew publish
+          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
+          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
+        run: ./gradlew bintrayUpload

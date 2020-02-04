@@ -9,13 +9,13 @@ For more information about the library, refer to the blog post [here](https://ch
 The [blog post](https://chrynan.codes/kotlin-inject/) was also featured in Kotlin Weekly issue [#182](https://mailchi.mp/kotlinweekly/kotlin-weekly-182).
 
 # Building the library
-The library is provided through [Github Packages](https://github.com/chRyNaN/inject/packages). Checkout the [releases](https://github.com/chRyNaN/inject/releases) package to get the latest version.
+The library is provided through [Bintray](https://bintray.com/). Checkout the [releases](https://github.com/chRyNaN/inject/releases) package to get the latest version.
 
 ### Repository
 ```kotlin
 repositories {
     maven {
-        url = uri("https://maven.pkg.github.com/chrynan/inject")
+        url = uri("https://dl.bintray.com/chrynan/chrynan")
     }
 }
 ```
