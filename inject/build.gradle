@@ -1,0 +1,50 @@
+apply plugin: "kotlin-multiplatform"
+
+group rootProject.libraryGroup
+version rootProject.libraryVersion
+
+kotlin {
+    targets {
+        jvm()
+        js()
+    }
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib-common"
+            }
+        }
+        jvmMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib"
+                implementation "javax.inject:javax.inject:1"
+            }
+        }
+        jsMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
+            }
+        }
+    }
+}
+
+configurations {
+    compileClasspath
+}
+
+publishing {
+    publications {
+        kotlinMultiplatform {
+            artifactId = "inject-common"
+        }
+        jvm {
+            artifactId = "inject-jvm"
+        }
+        js {
+            artifactId = "inject-js"
+        }
+        metadata {
+            artifactId = "inject-metadata"
+        }
+    }
+}
