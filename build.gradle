@@ -1,3 +1,6 @@
+import com.jfrog.bintray.gradle.tasks.BintrayUploadTask
+import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
+
 ext {
     bintrayRepo = "chrynan"
     libraryGroup = "com.chrynan"
@@ -21,7 +24,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0"
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
     }
 }
@@ -64,8 +67,19 @@ subprojects {
     }
 
     bintrayUpload.dependsOn publishToMavenLocal
-}
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+    tasks.withType(BintrayUploadTask) {
+        doFirst {
+            publishing.publications.withType(MavenPublication).forEach({ publication ->
+                File moduleFile = new File(project.buildDir, "publications/${publication.name}/module.json")
+                if (moduleFile.exists()) {
+                    publication.artifact(new FileBasedMavenArtifact(moduleFile) {
+                        protected String getDefaultExtension() {
+                            return 'module';
+                        }
+                    })
+                }
+            })
+        }
+    }
 }
