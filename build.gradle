@@ -3,7 +3,7 @@ import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
 
 ext {
     bintrayRepo = "chrynan"
-    libraryGroup = "com.chrynan"
+    libraryGroup = "com.chrynan.inject"
     libraryOwner = "chrynan"
     libraryRepo = "inject"
     libraryVersion = "0.4.0"
