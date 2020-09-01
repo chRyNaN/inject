@@ -15,7 +15,7 @@ kotlin {
         }
         jvmMain {
             dependencies {
-                implementation "javax.inject:javax.inject:1"
+                api "javax.inject:javax.inject:1"
             }
         }
     }
