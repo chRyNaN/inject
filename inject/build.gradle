@@ -9,6 +9,7 @@ kotlin {
     targets {
         jvm()
         js()
+        ios()
     }
     sourceSets {
         commonMain {
@@ -37,6 +38,12 @@ publishing {
         }
         js {
             artifactId = "inject-js"
+        }
+        iosArm64 {
+            artifactId = "inject-ios-arm64"
+        }
+        iosX64 {
+            artifactId = "inject-ios-x64"
         }
         metadata {
             artifactId = "inject-metadata"

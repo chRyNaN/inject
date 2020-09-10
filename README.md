@@ -36,6 +36,16 @@ implementation("com.chrynan.inject:inject-jvm:VERSION")
 implementation("com.chrynan.inject:inject-js:VERSION")
 ```
 
+**Kotlin iOS Arm64:**
+```kotlin
+implementation("com.chrynan.inject:inject-ios-arm64")
+```
+
+**Kotlin iOS x64:**
+```kotlin
+implementation("com.chrynan.inject:inject-ios-x64")
+```
+
 ## Using the library
 Simply use the provided annotations just as you would use the [javax.inject](https://search.maven.org/artifact/javax.inject/javax.inject/1/jar) annotations.
 
