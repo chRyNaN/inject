@@ -1,7 +1,9 @@
+import com.chrynan.inject.buildSrc.LibraryConstants
+
 apply plugin: "kotlin-multiplatform"
 
-group rootProject.libraryGroup
-version rootProject.libraryVersion
+group LibraryConstants.group
+version LibraryConstants.versionName
 
 kotlin {
     targets {

@@ -1,26 +1,13 @@
-import com.jfrog.bintray.gradle.tasks.BintrayUploadTask
 import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
+import com.chrynan.inject.buildSrc.LibraryConstants
 
-ext {
-    bintrayRepo = "chrynan"
-    libraryGroup = "com.chrynan.inject"
-    libraryOwner = "chrynan"
-    libraryRepo = "inject"
-    libraryVersion = "0.6.0"
-    libraryVersionCode = 4
-    libraryVersionDescription = "Minor Release"
-    libraryGithubUrl = "https://github.com/chRyNaN/inject.git"
-    libraryLicense = "Apache-2.0"
-}
-
-group libraryGroup
-version libraryVersion
+group LibraryConstants.group
+version LibraryConstants.versionName
 
 buildscript {
     repositories {
         mavenCentral()
         jcenter()
-        google()
     }
 
     dependencies {
@@ -46,40 +33,41 @@ subprojects {
     bintray {
         user = project.findProperty("BINTRAY_USER") ?: System.getenv("BINTRAY_USER")
         key = project.findProperty("BINTRAY_KEY") ?: System.getenv("BINTRAY_KEY")
+
         pkg {
-            repo = rootProject.bintrayRepo
-            name = rootProject.libraryRepo
-            licenses = [rootProject.libraryLicense]
-            vcsUrl = rootProject.libraryGithubUrl
+            repo = LibraryConstants.bintrayRepo
+            name = LibraryConstants.repoName
+            licenses = [LibraryConstants.license]
+            vcsUrl = LibraryConstants.vcsUrl
+
             version {
-                name = rootProject.libraryVersion
-                desc = rootProject.libraryVersionDescription
+                name = LibraryConstants.versionName
+                desc = LibraryConstants.versionDescription
                 released = new Date()
-                vcsTag = rootProject.libraryVersion
+                vcsTag = LibraryConstants.versionName
             }
         }
     }
 
     bintrayUpload.doFirst {
-        publications = publishing.publications.collect {
-            it.name
+        publications = publishing.publications.collect { publication ->
+            File moduleFile = new File(project.buildDir, "publications/${publication.name}/module.json")
+
+            if (moduleFile.exists()) {
+                publication.artifact(new FileBasedMavenArtifact(moduleFile) {
+                    protected String getDefaultExtension() {
+                        return "module"
+                    }
+                })
+            }
+
+            publication.name
         }
     }
 
     bintrayUpload.dependsOn publishToMavenLocal
+}
 
-    tasks.withType(BintrayUploadTask) {
-        doFirst {
-            publishing.publications.withType(MavenPublication).forEach({ publication ->
-                File moduleFile = new File(project.buildDir, "publications/${publication.name}/module.json")
-                if (moduleFile.exists()) {
-                    publication.artifact(new FileBasedMavenArtifact(moduleFile) {
-                        protected String getDefaultExtension() {
-                            return "module"
-                        }
-                    })
-                }
-            })
-        }
-    }
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
