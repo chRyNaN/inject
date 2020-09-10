@@ -1,3 +1,5 @@
 rootProject.name = "inject"
 
 include ":inject"
+
+enableFeaturePreview("GRADLE_METADATA")
