@@ -1,0 +1,78 @@
+//[inject](../../../index.md)/[com.chrynan.inject](../index.md)/[Scope](index.md)
+
+
+
+# Scope  
+ [common] @[Target](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html)(allowedTargets = [[AnnotationTarget.ANNOTATION_CLASS](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-a-n-n-o-t-a-t-i-o-n_-c-l-a-s-s/index.html)])  
+  
+annotation class [Scope](index.md)
+
+Identifies scope annotations. A scope annotation applies to a class containing an injectable constructor and governs how the injector reuses instances of the type. By default, if no scope annotation is present, the injector creates an instance (by injecting the type's constructor), uses the instance for one injection, and then forgets it. If a scope annotation is present, the injector may retain the instance for possible reuse in a later injection. If multiple threads can access a scoped instance, its implementation should be thread safe. The implementation of the scope itself is left up to the injector.
+
+
+
+<p>In the following example, the scope annotation {@code @Singleton} ensures that we only have one Log instance:
+
+
+
+<pre> &#064;Singleton class Log {     void log(String message) { ... } }</pre>
+
+
+
+<p>The injector generates an error if it encounters more than one scope annotation on the same class or a scope annotation it doesn't support.
+
+
+
+<p>A scope annotation: <ul> <li>is annotated with {@code @Scope}, {@code @Retention(RUNTIME)},     and typically {@code @Documented}.</li> <li>should not have attributes.</li> <li>is typically not {@code @Inherited}, so scoping is orthogonal to     implementation inheritance.</li> <li>may have restricted usage if annotated with {@code @Target}. While     this specification covers applying scopes to classes only, some     injector configurations might use scope annotations     in other places (on factory method results for example).</li> </ul>
+
+
+
+<p>For example:
+
+
+
+<pre> &#064;java.lang.annotation.Documented &#064;java.lang.annotation.Retention(RUNTIME) &#064;javax.inject.Scope public @interface RequestScoped {}</pre>
+
+
+
+<p>Annotating scope annotations with {@code @Scope} helps the injector detect the case where a programmer used the scope annotation on a class but forgot to configure the scope in the injector. A conservative injector would generate an error rather than not apply a scope.
+
+   
+ [ios, js] annotation class [Scope](index.md)   
+ [jvm] typealias [Scope](index.md) = Scope   
+
+
+## See also  
+  
+common  
+  
+| | |
+|---|---|
+| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a>[com.chrynan.inject.Singleton](../-singleton/index.md)| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a><br><br>@Singleton<br><br>|
+  
+ios  
+  
+| | |
+|---|---|
+| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a>[com.chrynan.inject.Singleton](../-singleton/index.md)| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a><br><br>@Singleton<br><br>|
+  
+js  
+  
+| | |
+|---|---|
+| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a>[com.chrynan.inject.Singleton](../-singleton/index.md)| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a><br><br>@Singleton<br><br>|
+  
+jvm  
+  
+| | |
+|---|---|
+| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a>[com.chrynan.inject.Singleton](../-singleton/index.md)| <a name="com.chrynan.inject/Scope///PointingToDeclaration/"></a><br><br>@Singleton<br><br>|
+  
+
+
+## Constructors  
+  
+| | |
+|---|---|
+| <a name="com.chrynan.inject/Scope/Scope/#/PointingToDeclaration/"></a>[Scope](-scope.md)| <a name="com.chrynan.inject/Scope/Scope/#/PointingToDeclaration/"></a> [common, ios, js] fun [Scope](-scope.md)()   <br>|
+
