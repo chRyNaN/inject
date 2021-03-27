@@ -34,7 +34,7 @@ class MyUseCase @Inject constructor() { ... }
 * `@Singleton`
 * `Provider<T>`
 
-# Building the library
+## Building the library
 
 The library is provided through [repsy.io](https://repsy.io). Checkout
 the [releases](https://github.com/chRyNaN/inject/releases) package to get the latest version. <br/>
