@@ -11,4 +11,11 @@ object LibraryConstants {
     const val versionDescription = "Release 0.8.0"
     const val license = "Apache-2.0"
     const val vcsUrl = "https://github.com/chRyNaN/inject.git"
+
+    object Android {
+
+        const val compileSdkVersion = 30
+        const val minSdkVersion = 24
+        const val targetSdkVersion = 30
+    }
 }

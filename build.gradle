@@ -7,14 +7,16 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
+        google()
         maven { url = "https://repo.repsy.io/mvn/chrynan/public" }
         maven { url = "https://dl.bintray.com/chrynan/chrynan" }
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31"
+        classpath "com.android.tools.build:gradle:4.1.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.4.30"
-        classpath "org.jetbrains.kotlin:kotlin-serialization:1.4.31"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:1.5.0"
         classpath "com.chrynan.target:target-plugin:0.1.0"
     }
 }
@@ -25,6 +27,7 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
+        google()
         maven { url = "https://dl.bintray.com/chrynan/chrynan" }
         maven { url = "https://repo.repsy.io/mvn/chrynan/public" }
     }
@@ -32,10 +35,6 @@ allprojects {
 
 configurations {
     compileClasspath
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
 
 // Documentation
