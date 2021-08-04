@@ -4,12 +4,15 @@ apply plugin: "kotlin-multiplatform"
 apply plugin: "com.android.library"
 apply plugin: "maven-publish"
 apply plugin: "org.jetbrains.dokka"
-apply plugin: "com.chrynan.target.plugin"
 
 group LibraryConstants.group
 version LibraryConstants.versionName
 
 kotlin {
+    android {
+        publishAllLibraryVariants()
+        publishLibraryVariantsGroupedByFlavor = true
+    }
     targets {
         android()
         jvm()
@@ -87,35 +90,17 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     }
 }
 
-afterEvaluate {
-    publishing {
-        repositories {
-            maven {
-                url "https://repo.repsy.io/mvn/chrynan/public"
+publishing {
+    repositories {
+        maven {
+            url "https://repo.repsy.io/mvn/chrynan/public"
 
-                credentials {
-                    username = project.findProperty("repsyUsername") ?: System.getenv("repsyUsername")
-                    password = project.findProperty("repsyToken") ?: System.getenv("repsyToken")
-                }
-            }
-        }
-
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId LibraryConstants.group
-                artifactId "inject"
-                version LibraryConstants.versionName
+            credentials {
+                username = project.findProperty("repsyUsername") ?: System.getenv("repsyUsername")
+                password = project.findProperty("repsyToken") ?: System.getenv("repsyToken")
             }
         }
     }
-}
-
-// Target Information
-kotlinTargetDataGenerator {
-    generateJson = true
-    generateSvg = true
-    outputPath = "${projectDir.path}/targets"
 }
 
 // Documentation
