@@ -1,12 +1,7 @@
 //[inject](../../../index.md)/[com.chrynan.inject](../index.md)/[Singleton](index.md)/[Singleton](-singleton.md)
 
+# Singleton
 
-
-# Singleton  
-[common, ios, js]  
-Content  
-[common, ios, js]  
-fun [Singleton](-singleton.md)()  
-
-
-
+[common, ios, js]\
+[common, ios, js]\
+fun [Singleton](-singleton.md)()

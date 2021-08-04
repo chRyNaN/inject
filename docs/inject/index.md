@@ -1,13 +1,9 @@
 //[inject](index.md)
 
+# inject
 
+## Packages
 
-# inject  
-
-
-## Packages  
-  
-|  Name | 
+| Name |
 |---|
-| <a name="com.chrynan.inject////PointingToDeclaration/"></a>[com.chrynan.inject](inject/com.chrynan.inject/index.md)|
-
+| [com.chrynan.inject](inject/com.chrynan.inject/index.md) |
