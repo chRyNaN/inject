@@ -1,3 +1,3 @@
 rootProject.name = "inject"
 
-include ":inject"
+include(":inject")
