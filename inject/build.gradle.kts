@@ -1,4 +1,5 @@
 import com.chrynan.inject.buildSrc.LibraryConstants
+import com.chrynan.inject.buildSrc.isBuildingOnOSX
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -17,13 +18,18 @@ kotlin {
     }
     targets {
         android()
+
         jvm()
-        js(BOTH) {
+
+        js(IR) {
             browser()
             nodejs()
         }
-        ios()
-        iosSimulatorArm64()
+
+        if (isBuildingOnOSX()) {
+            ios()
+            iosSimulatorArm64()
+        }
     }
     sourceSets {
         val commonMain by getting {
@@ -32,17 +38,20 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                api("javax.inject:javax.inject:1")
+                api("javax.inject:javax.inject:_")
             }
         }
         val androidMain by getting {
             dependencies {
-                api("javax.inject:javax.inject:1")
+                api("javax.inject:javax.inject:_")
             }
         }
-        val iosMain by sourceSets.getting
-        val iosSimulatorArm64Main by sourceSets.getting
-        iosSimulatorArm64Main.dependsOn(iosMain)
+
+        if (isBuildingOnOSX()) {
+            val iosMain by sourceSets.getting
+            val iosSimulatorArm64Main by sourceSets.getting
+            iosSimulatorArm64Main.dependsOn(iosMain)
+        }
     }
 }
 
@@ -71,7 +80,7 @@ android {
             jvmTarget = "1.8"
             // Opt-in to experimental compose APIs
             freeCompilerArgs = listOf(
-                    "-Xopt-in=kotlin.RequiresOptIn"
+                "-Xopt-in=kotlin.RequiresOptIn"
             )
         }
     }

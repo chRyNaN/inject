@@ -10,4 +10,4 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: 'Welcome and thanks for contributing! Make sure to leave a detailed explanation of the issue.'
-          pr-message: 'Welcome and thanks for contributing! Make sure to follow the project''s coding conventions.'
+          pr-message: 'Welcome and thanks for contributing! Make sure to follow the project''s coding conventions. For a faster response time, consider [boosting](https://www.buymeacoffee.com/chrynan/commissions) your issue.'

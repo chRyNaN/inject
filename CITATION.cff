@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+    - family-names: "Keenan"
+      given-names: "Christopher"
+      alias: chRyNaN
+      website: "https://chrynan.codes"
+contact:
+    - family-names: "Keenan"
+      given-names: "Christopher"
+      alias: chRyNaN
+      website: "https://chrynan.codes"
+title: "inject"
+type: "software"
+abstract: "A simple Kotlin multi-platform abstraction around the javax.inject annotations."
+license: Apache-2.0
+keywords:
+    - kotlin
+    - inject
+    - "dependency injection"
+    - di
+    - "dependency-injection"
+    - "kotlin multiplatform"
+repository-code: "https://github.com/chRyNaN/inject"
+url: "https://github.com/chRyNaN/inject"

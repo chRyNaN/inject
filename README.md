@@ -1,3 +1,5 @@
+![inject](assets/inject_logo.png)
+
 # Inject
 
 A simple Kotlin multi-platform abstraction around
@@ -7,6 +9,7 @@ annotations in Kotlin common code so that platform specific annotation processor
 
 For more information about the library, refer to the blog post [here](https://chrynan.codes/kotlin-inject/) which was
 featured in Android Weekly issue [#396](https://androidweekly.net/issues/issue-396).
+<br/><br/>
 <a href="https://androidweekly.net/issues/issue-396" title="Android Weekly Issue 396">
 <img alt="Badge" src="https://androidweekly.net/issues/issue-396/badge" height="20px"></img>
 </a>
@@ -14,27 +17,7 @@ featured in Android Weekly issue [#396](https://androidweekly.net/issues/issue-3
 The [blog post](https://chrynan.codes/kotlin-inject/) was also featured in Kotlin Weekly
 issue [#182](https://mailchi.mp/kotlinweekly/kotlin-weekly-182).
 
-## Using the library
-
-Simply use the provided annotations just as you would use
-the [javax.inject](https://search.maven.org/artifact/javax.inject/javax.inject/1/jar) annotations.
-
-For example, using the `Inject` annotation on a constructor in Kotlin Common code:
-
-```kotlin
-class MyUseCase @Inject constructor() { ... }
-```
-
-## Available annotations and interfaces
-
-* `@Inject`
-* `@Named("name")`
-* `@Qualifier`
-* `@Scope`
-* `@Singleton`
-* `Provider<T>`
-
-## Building the library
+## Getting Started 🏁
 
 The library is provided through [repsy.io](https://repsy.io). Checkout
 the [releases](https://github.com/chRyNaN/inject/releases) package to get the latest version. <br/>
@@ -54,12 +37,48 @@ repositories {
 implementation("com.chrynan.inject:inject:VERSION")
 ```
 
-## Documentation
+## Usage 👨‍💻
+
+Simply use the provided annotations just as you would use
+the [javax.inject](https://search.maven.org/artifact/javax.inject/javax.inject/1/jar) annotations.
+
+For example, using the `Inject` annotation on a constructor in Kotlin Common code:
+
+```kotlin
+class MyUseCase @Inject constructor() { ... }
+```
+
+## Available annotations and interfaces
+
+* `@Inject`
+* `@Named("name")`
+* `@Qualifier`
+* `@Scope`
+* `@Singleton`
+* `Provider<T>`
+
+## Documentation 📃
 
 More detailed documentation is available in the [docs](docs) folder. The entry point to the documentation can be
 found [here](docs/index.md).
 
-## [License]("https://github.com/chRyNaN/inject/blob/master/LICENSE")
+## Security 🛡️
+
+For security vulnerabilities, concerns, or issues, please responsibly disclose the information either by opening a
+public GitHub Issue or reaching out to the project owner.
+
+## Contributing ✍️
+
+Outside contributions are welcome for this project. Please follow the [code of conduct](CODE_OF_CONDUCT.md)
+and [coding conventions](CODING_CONVENTIONS.md) when contributing. If contributing code, please add thorough documents.
+and tests. Thank you!
+
+## Sponsorship ❤️
+
+Support this project by [becoming a sponsor](https://www.buymeacoffee.com/chrynan) of my work! And make sure to give the
+repository a ⭐
+
+## License ⚖️
 
 ```
 Copyright 2021 chRyNaN
