@@ -3,9 +3,9 @@
 # Named
 
 [common]\
-@[Qualifier](../-qualifier/index.md)()
+@[Qualifier](../-qualifier/index.md)
 
-annotation class [Named](index.md)(**value**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+expect annotation class [Named](index.md)(val value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
 
 String-based {@linkplain Qualifier qualifier}.
 
@@ -16,20 +16,14 @@ public class Car {
     ...
 }</pre>
 
-[ios, js]\
-annotation class [Named](index.md)(**value**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+[js]\
+actual annotation class [Named](index.md)(val value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
 
 [android, jvm]\
-typealias [Named](index.md) = Named
-
-## Constructors
-
-| | |
-|---|---|
-| [Named](-named.md) | [common, ios, js]<br>fun [Named](-named.md)(value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) |
+actual typealias [Named](index.md) = Named
 
 ## Properties
 
 | Name | Summary |
 |---|---|
-| [value](value.md) | [common, ios, js]<br>val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [value](value.md) | [common, js]<br>[common]<br>expect val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>[js]<br>actual val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

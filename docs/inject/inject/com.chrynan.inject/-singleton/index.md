@@ -2,53 +2,18 @@
 
 # Singleton
 
-[common]\
-@[Scope](../-scope/index.md)()
+@[Scope](../-scope/index.md)
 
-annotation class [Singleton](index.md)
+expect annotation class [Singleton](index.md)
+
+@[Scope](../-scope/index.md)
+
+actual annotation class [Singleton](index.md)actual typealias [Singleton](index.md) = Singletonactual typealias [Singleton](index.md) = Singleton
 
 Identifies a type that the injector only instantiates once. Not inherited.
 
-[ios, js]\
-annotation class [Singleton](index.md)
-
-[android, jvm]\
-typealias [Singleton](index.md) = Singleton
-
-## See also
-
-common
+#### See also
 
 | | |
 |---|---|
-| [com.chrynan.inject.Scope](../-scope/index.md) | @Scope |
-
-ios
-
-| | |
-|---|---|
-| [com.chrynan.inject.Scope](../-scope/index.md) | @Scope |
-
-js
-
-| | |
-|---|---|
-| [com.chrynan.inject.Scope](../-scope/index.md) | @Scope |
-
-android
-
-| | |
-|---|---|
-| [com.chrynan.inject.Scope](../-scope/index.md) | @Scope |
-
-jvm
-
-| | |
-|---|---|
-| [com.chrynan.inject.Scope](../-scope/index.md) | @Scope |
-
-## Constructors
-
-| | |
-|---|---|
-| [Singleton](-singleton.md) | [common, ios, js]<br>fun [Singleton](-singleton.md)() |
+| [Scope](../-scope/index.md) | @Scope |

@@ -2,10 +2,13 @@
 
 # Inject
 
-[common]\
 @[Target](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html)(allowedTargets = [[AnnotationTarget.FUNCTION](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-u-n-c-t-i-o-n/index.html), [AnnotationTarget.CONSTRUCTOR](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-c-o-n-s-t-r-u-c-t-o-r/index.html), [AnnotationTarget.PROPERTY](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-p-r-o-p-e-r-t-y/index.html), [AnnotationTarget.FIELD](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-i-e-l-d/index.html)])
 
-annotation class [Inject](index.md)
+expect annotation class [Inject](index.md)
+
+@[Target](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html)(allowedTargets = [[AnnotationTarget.FUNCTION](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-u-n-c-t-i-o-n/index.html), [AnnotationTarget.CONSTRUCTOR](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-c-o-n-s-t-r-u-c-t-o-r/index.html), [AnnotationTarget.PROPERTY](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-p-r-o-p-e-r-t-y/index.html), [AnnotationTarget.FIELD](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-i-e-l-d/index.html)])
+
+actual annotation class [Inject](index.md)actual typealias [Inject](index.md) = Injectactual typealias [Inject](index.md) = Inject
 
 Identifies injectable constructors, methods, and fields. May apply to static as well as instance members. An injectable member may have any access modifier (private, package-private, protected, public). Constructors are injected first, followed by fields, and then methods. Fields and methods in superclasses are injected before those in subclasses. Ordering of injection among fields and among methods in the same class is not specified.
 
@@ -115,51 +118,9 @@ circular dependencies. In the case of method or field injection, scoping
 one of the dependencies (using {@linkplain Singleton singleton scope}, for
 example) may also enable a valid circular relationship.
 
-[ios, js]\
-annotation class [Inject](index.md)
-
-[android, jvm]\
-typealias [Inject](index.md) = Inject
-
-## See also
-
-common
+#### See also
 
 | | |
 |---|---|
-| [com.chrynan.inject.Qualifier](../-qualifier/index.md) | @Qualifier |
-| [com.chrynan.inject.Provider](../-provider/index.md) |  |
-
-ios
-
-| | |
-|---|---|
-| [com.chrynan.inject.Qualifier](../-qualifier/index.md) | @Qualifier |
-| [com.chrynan.inject.Provider](../-provider/index.md) |  |
-
-js
-
-| | |
-|---|---|
-| [com.chrynan.inject.Qualifier](../-qualifier/index.md) | @Qualifier |
-| [com.chrynan.inject.Provider](../-provider/index.md) |  |
-
-android
-
-| | |
-|---|---|
-| [com.chrynan.inject.Qualifier](../-qualifier/index.md) | @Qualifier |
-| [com.chrynan.inject.Provider](../-provider/index.md) |  |
-
-jvm
-
-| | |
-|---|---|
-| [com.chrynan.inject.Qualifier](../-qualifier/index.md) | @Qualifier |
-| [com.chrynan.inject.Provider](../-provider/index.md) |  |
-
-## Constructors
-
-| | |
-|---|---|
-| [Inject](-inject.md) | [common, ios, js]<br>fun [Inject](-inject.md)() |
+| [Qualifier](../-qualifier/index.md) | @Qualifier |
+| [Provider](../-provider/index.md) |

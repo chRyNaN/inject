@@ -2,10 +2,13 @@
 
 # Scope
 
-[common]\
 @[Target](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html)(allowedTargets = [[AnnotationTarget.ANNOTATION_CLASS](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-a-n-n-o-t-a-t-i-o-n_-c-l-a-s-s/index.html)])
 
-annotation class [Scope](index.md)
+expect annotation class [Scope](index.md)
+
+@[Target](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html)(allowedTargets = [[AnnotationTarget.ANNOTATION_CLASS](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-a-n-n-o-t-a-t-i-o-n_-c-l-a-s-s/index.html)])
+
+actual annotation class [Scope](index.md)actual typealias [Scope](index.md) = Scopeactual typealias [Scope](index.md) = Scope
 
 Identifies scope annotations. A scope annotation applies to a class containing an injectable constructor and governs how the injector reuses instances of the type. By default, if no scope annotation is present, the injector creates an instance (by injecting the type's constructor), uses the instance for one injection, and then forgets it. If a scope annotation is present, the injector may retain the instance for possible reuse in a later injection. If multiple threads can access a scoped instance, its implementation should be thread safe. The implementation of the scope itself is left up to the injector.
 
@@ -35,46 +38,8 @@ detect the case where a programmer used the scope annotation on a class but
 forgot to configure the scope in the injector. A conservative injector
 would generate an error rather than not apply a scope.
 
-[ios, js]\
-annotation class [Scope](index.md)
-
-[android, jvm]\
-typealias [Scope](index.md) = Scope
-
-## See also
-
-common
+#### See also
 
 | | |
 |---|---|
-| [com.chrynan.inject.Singleton](../-singleton/index.md) | @Singleton |
-
-ios
-
-| | |
-|---|---|
-| [com.chrynan.inject.Singleton](../-singleton/index.md) | @Singleton |
-
-js
-
-| | |
-|---|---|
-| [com.chrynan.inject.Singleton](../-singleton/index.md) | @Singleton |
-
-android
-
-| | |
-|---|---|
-| [com.chrynan.inject.Singleton](../-singleton/index.md) | @Singleton |
-
-jvm
-
-| | |
-|---|---|
-| [com.chrynan.inject.Singleton](../-singleton/index.md) | @Singleton |
-
-## Constructors
-
-| | |
-|---|---|
-| [Scope](-scope.md) | [common, ios, js]<br>fun [Scope](-scope.md)() |
+| [Singleton](../-singleton/index.md) | @Singleton |

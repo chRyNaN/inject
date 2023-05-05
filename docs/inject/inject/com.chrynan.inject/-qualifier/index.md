@@ -2,10 +2,13 @@
 
 # Qualifier
 
-[common]\
 @[Target](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html)(allowedTargets = [[AnnotationTarget.ANNOTATION_CLASS](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-a-n-n-o-t-a-t-i-o-n_-c-l-a-s-s/index.html)])
 
-annotation class [Qualifier](index.md)
+expect annotation class [Qualifier](index.md)
+
+@[Target](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html)(allowedTargets = [[AnnotationTarget.ANNOTATION_CLASS](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-a-n-n-o-t-a-t-i-o-n_-c-l-a-s-s/index.html)])
+
+actual annotation class [Qualifier](index.md)actual typealias [Qualifier](index.md) = Qualifieractual typealias [Qualifier](index.md) = Qualifier
 
 Identifies qualifier annotations. Anyone can define a new qualifier. A qualifier annotation:
 
@@ -29,46 +32,8 @@ public @interface Leather {
     public enum Color { RED, BLACK, TAN }
 }</pre>
 
-[ios, js]\
-annotation class [Qualifier](index.md)
-
-[android, jvm]\
-typealias [Qualifier](index.md) = Qualifier
-
-## See also
-
-common
+#### See also
 
 | | |
 |---|---|
-| [com.chrynan.inject.Named](../-named/index.md) | @Named |
-
-ios
-
-| | |
-|---|---|
-| [com.chrynan.inject.Named](../-named/index.md) | @Named |
-
-js
-
-| | |
-|---|---|
-| [com.chrynan.inject.Named](../-named/index.md) | @Named |
-
-android
-
-| | |
-|---|---|
-| [com.chrynan.inject.Named](../-named/index.md) | @Named |
-
-jvm
-
-| | |
-|---|---|
-| [com.chrynan.inject.Named](../-named/index.md) | @Named |
-
-## Constructors
-
-| | |
-|---|---|
-| [Qualifier](-qualifier.md) | [common, ios, js]<br>fun [Qualifier](-qualifier.md)() |
+| [Named](../-named/index.md) | @Named |

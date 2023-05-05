@@ -2,6 +2,9 @@
 
 # value
 
-[common, ios, js]\
-[common, ios, js]\
-val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+[common, js]\
+[common]\
+expect val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+[js]\
+actual val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)

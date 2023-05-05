@@ -2,17 +2,12 @@ $dokka.format:gfm-v1
 $dokka.linkExtension:md
 $dokka.location:com.chrynan.inject////PointingToDeclaration/inject/inject/com.chrynan.inject/index.md
 $dokka.location:com.chrynan.inject/Inject///PointingToDeclaration/inject/inject/com.chrynan.inject/-inject/index.md
-$dokka.location:com.chrynan.inject/Inject/Inject/#/PointingToDeclaration/inject/inject/com.chrynan.inject/-inject/-inject.md
 $dokka.location:com.chrynan.inject/Named///PointingToDeclaration/inject/inject/com.chrynan.inject/-named/index.md
-$dokka.location:com.chrynan.inject/Named/Named/#kotlin.String/PointingToDeclaration/inject/inject/com.chrynan.inject/-named/-named.md
 $dokka.location:com.chrynan.inject/Named/value/#/PointingToDeclaration/inject/inject/com.chrynan.inject/-named/value.md
 $dokka.location:com.chrynan.inject/Provider///PointingToDeclaration/inject/inject/com.chrynan.inject/-provider/index.md
 $dokka.location:com.chrynan.inject/Provider/get/#/PointingToDeclaration/inject/inject/com.chrynan.inject/-provider/get.md
 $dokka.location:com.chrynan.inject/Qualifier///PointingToDeclaration/inject/inject/com.chrynan.inject/-qualifier/index.md
-$dokka.location:com.chrynan.inject/Qualifier/Qualifier/#/PointingToDeclaration/inject/inject/com.chrynan.inject/-qualifier/-qualifier.md
 $dokka.location:com.chrynan.inject/Scope///PointingToDeclaration/inject/inject/com.chrynan.inject/-scope/index.md
-$dokka.location:com.chrynan.inject/Scope/Scope/#/PointingToDeclaration/inject/inject/com.chrynan.inject/-scope/-scope.md
 $dokka.location:com.chrynan.inject/Singleton///PointingToDeclaration/inject/inject/com.chrynan.inject/-singleton/index.md
-$dokka.location:com.chrynan.inject/Singleton/Singleton/#/PointingToDeclaration/inject/inject/com.chrynan.inject/-singleton/-singleton.md
 module:inject
 com.chrynan.inject
